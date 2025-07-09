@@ -1,6 +1,15 @@
 {
-  "extends": "expo/tsconfig.base",
+  "extends": "@react-native/typescript-config",
   "compilerOptions": {
-    "strict": true
+    "target": "ES2015",
+    "downlevelIteration": true,
+    "lib": ["ES2015", "DOM"],
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"]
+    },
+    "jsx": "react-native",
+    "moduleResolution": "node"
   }
 }
