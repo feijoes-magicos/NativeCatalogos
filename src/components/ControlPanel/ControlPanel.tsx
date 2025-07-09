@@ -62,7 +62,7 @@ const ControlPanel = (props: Props) => {
 			<View style={{ width: "90%", backgroundColor: "#CCD0CF", height:1 }} />
 			<SecondRowFunctions>
 				<Sweep
-					onClick={() => {
+					onPress={() => {
 						setReversedPack(!reversedPack);
 					}}
 				>

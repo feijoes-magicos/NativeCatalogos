@@ -8,6 +8,7 @@ import { PRODUCTS_LOCATION } from "@env";
 import Header from "@components/Header";
 import ControlPanel from "@components/ControlPanel";
 import PriceControlPanel from "@components/PriceControlPanel";
+import PackInfo from "@components/PackInfo";
 
 const sizeOrder = ["PP", "P", "M", "G", "GG"];
 const fetchProducts = async () => {
@@ -38,7 +39,7 @@ function App() {
   const [infoModal, setInfoModal] = useState(false);
   const [seekModal, setSeekModal] = useState(false);
 
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef(null);
   useEffect(() => {
     fetchProducts()
       .then((data) => {
@@ -105,15 +106,16 @@ function App() {
           products={maybeProducts}
           setPhotoCursor={setPhotoCursor}
           infoModalHandler={{ infoModal, setInfoModal }}
-		  seekModalHandler={{seekModal, setSeekModal}}
-		  reversedPackHandler={{reversedPack,setReversedPack}}
+          seekModalHandler={{ seekModal, setSeekModal }}
+          reversedPackHandler={{ reversedPack, setReversedPack }}
         />
-        <PackDisplay>
-		<PriceControlPanel 
-		cursor={cursor}
-		packsHandler={{packs, setPacks}}
-		/>
-		</PackDisplay>
+        <PackDisplay $reversed={reversedPack}>
+          <PriceControlPanel
+            cursor={cursor}
+            packsHandler={{ packs, setPacks }}
+          />
+          <PackInfo cursor={cursor} packs={packs} />
+        </PackDisplay>
       </Footer>
     </Screen>
   );
