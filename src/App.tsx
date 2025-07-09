@@ -7,6 +7,7 @@ import { PRODUCTS_LOCATION } from "@env";
 
 import Header from "@components/Header";
 import ControlPanel from "@components/ControlPanel";
+import PriceControlPanel from "@components/PriceControlPanel";
 
 const sizeOrder = ["PP", "P", "M", "G", "GG"];
 const fetchProducts = async () => {
@@ -107,7 +108,12 @@ function App() {
 		  seekModalHandler={{seekModal, setSeekModal}}
 		  reversedPackHandler={{reversedPack,setReversedPack}}
         />
-        <PackDisplay></PackDisplay>
+        <PackDisplay>
+		<PriceControlPanel 
+		cursor={cursor}
+		packsHandler={{packs, setPacks}}
+		/>
+		</PackDisplay>
       </Footer>
     </Screen>
   );
