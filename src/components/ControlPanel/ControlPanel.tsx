@@ -69,7 +69,7 @@ const ControlPanel = (props: Props) => {
 					<IconInnerImg source={swap} />
 				</Sweep>
 				<Label>{products[cursor].subcategories}</Label>
-				<Label>
+				<Label numberOfLines={1} ellipsizeMode="tail">
 					Ref:
 					<Text style={{ color: "black" }}>{products[cursor].reference}</Text>
 				</Label>

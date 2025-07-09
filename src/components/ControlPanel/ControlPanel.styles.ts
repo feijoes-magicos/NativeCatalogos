@@ -1,3 +1,4 @@
+import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components/native";
 
@@ -65,9 +66,11 @@ export const MiniPic = styled.TouchableOpacity`
   padding: 1px;
 `;
 
-export const Label = styled.Text`
+export const Label = styled(Text)`
   color: #809caa;
   font-size: 18px;
+  max-width: 40%;
+  overflow-x: hidden;
 `;
 export const Span = styled.Text`
   color: black;
