@@ -17,7 +17,6 @@ export const Tab = styled.View`
   justify-content: center;
 `;
 export const Icon = styled.TouchableOpacity`
-  height: fit-content;
   align-self: center;
   justify-content: center;
 `;

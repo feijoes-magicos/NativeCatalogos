@@ -3,6 +3,8 @@
   "compilerOptions": {
     "target": "ES2015",
     "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "lib": ["ES2015", "DOM"],
     "baseUrl": ".",
     "paths": {
