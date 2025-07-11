@@ -11,6 +11,7 @@ import PriceControlPanel from "@components/PriceControlPanel";
 import PackInfo from "@components/PackInfo";
 import Carousel from "@components/Carousel";
 import InfoModal from "@components/InfoModal";
+import SeekModal from "@components/SeekModal";
 
 const sizeOrder = ["PP", "P", "M", "G", "GG"];
 const fetchProducts = async () => {
@@ -44,8 +45,9 @@ function App() {
 	useEffect(() => {
 		fetchProducts()
 			.then((data) => {
-				if (Array.isArray(data)) {
-					setMaybeProducts(data);
+				if (Array.isArray(data) && data[0]) {
+					const products:Array<Product> = data
+					setMaybeProducts(products.sort((a,b) => a.categories.localeCompare(b.categories)));
 				}
 			})
 			.catch((e) => {
@@ -96,6 +98,13 @@ function App() {
 				info={{ ...maybeProducts[cursor] }}
 				openStatusHandler={{ infoModal, setInfoModal }}
 			/>
+			<SeekModal
+				list={maybeProducts}
+				openStatusHandler={{ seekModal, setSeekModal }}
+				cursorState={(x: number) => {
+					setCursor(x);
+				}}
+			/>
 			<Screen>
 				<Header
 					products={maybeProducts}
@@ -126,7 +135,7 @@ function App() {
 					</PackDisplay>
 				</Footer>
 			</Screen>
-			</>
+		</>
 	);
 }
 

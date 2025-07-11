@@ -17,7 +17,8 @@ import info from "@assets/info.png";
 import shopCart from "@assets/shopCart.png";
 
 import ImageSelector from "./subcomponents/ImageSelector";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
+import * as Clipboard from "expo-clipboard";
 
 const ControlPanel = (props: Props) => {
 	const { products, cursor, setPhotoCursor } = props;
@@ -27,12 +28,20 @@ const ControlPanel = (props: Props) => {
 	return (
 		<ControlPanelContainer>
 			<FirstRowFunctions>
-				<Icon onPress={()=>{setInfoModal(!infoModal)}}>
+				<Icon
+					onPress={() => {
+						setInfoModal(!infoModal);
+					}}
+				>
 					<IconInnerImg source={info} />
 				</Icon>
-					<Icon onPress={()=>{setSeekModal(!seekModal)}}>
-						<IconInnerImg source={seek} />
-					</Icon>
+				<Icon
+					onPress={() => {
+						setSeekModal(!seekModal);
+					}}
+				>
+					<IconInnerImg source={seek} />
+				</Icon>
 
 				<PicDisplay>
 					<ImageSelector
@@ -57,7 +66,13 @@ const ControlPanel = (props: Props) => {
 					<IconInnerImg source={swap} />
 				</Sweep>
 				<Label>{products[cursor].subcategories}</Label>
-				<Label numberOfLines={1} ellipsizeMode="tail">
+				<Label
+					numberOfLines={1}
+					ellipsizeMode="tail"
+					onLongPress={() => {
+						Clipboard.setStringAsync(products[cursor].reference);
+					}}
+				>
 					Ref:
 					<Text style={{ color: "black" }}>{products[cursor].reference}</Text>
 				</Label>

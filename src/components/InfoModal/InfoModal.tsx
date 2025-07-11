@@ -35,11 +35,11 @@ const InfoModal = (props: Props) => {
 					</Header>
 					<Text style={{ fontSize: 14, alignSelf: "center" }}>Cores</Text>
 					<BodyInfoModal>
-						<Text>Nome do Produto: {props.info ? props.info.name : "..."}</Text>
-						<Text>Referencia: {props.info ? props.info.reference : "..."}</Text>
-						<Text>Marca: {props.info ? props.info.reference : "..."}</Text>
-						<Text>Categoria: {props.info ? props.info.categories : "..."}</Text>
-						<Text>Genero: {props.info ? props.info.gender : "..."}</Text>
+						<Text>Nome do Produto: {props.info.name ? props.info.name : "..."}</Text>
+						<Text>Referencia: {props.info.reference ? props.info.reference : "..."}</Text>
+						<Text>Marca: {props.info.brand ? props.info.brand : "..."}</Text>
+						<Text>Categoria: {props.info.categories ? props.info.categories : "..."}</Text>
+						<Text>Genero: {props.info.gender ? props.info.gender : "..."}</Text>
 					</BodyInfoModal>
 				</Window>
 			</WindowWrapper>
