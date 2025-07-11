@@ -10,6 +10,7 @@ import ControlPanel from "@components/ControlPanel";
 import PriceControlPanel from "@components/PriceControlPanel";
 import PackInfo from "@components/PackInfo";
 import Carousel from "@components/Carousel";
+import InfoModal from "@components/InfoModal";
 
 const sizeOrder = ["PP", "P", "M", "G", "GG"];
 const fetchProducts = async () => {
@@ -90,36 +91,42 @@ function App() {
 	}
 
 	return (
-		<Screen>
-			<Header
-				products={maybeProducts}
-				setCursor={setCursor}
-				categories={categories}
-				currentCategory={maybeProducts[cursor].categories}
+		<>
+			<InfoModal
+				info={{ ...maybeProducts[cursor] }}
+				openStatusHandler={{ infoModal, setInfoModal }}
 			/>
-			<Carousel
-				products={maybeProducts}
-				photoCursor={photoCursor}
-				cursorHandler={{ cursor, setCursor }}
-			/>
-			<Footer>
-				<ControlPanel
-					cursor={cursor}
+			<Screen>
+				<Header
 					products={maybeProducts}
-					setPhotoCursor={setPhotoCursor}
-					infoModalHandler={{ infoModal, setInfoModal }}
-					seekModalHandler={{ seekModal, setSeekModal }}
-					reversedPackHandler={{ reversedPack, setReversedPack }}
+					setCursor={setCursor}
+					categories={categories}
+					currentCategory={maybeProducts[cursor].categories}
 				/>
-				<PackDisplay $reversed={reversedPack}>
-					<PriceControlPanel
+				<Carousel
+					products={maybeProducts}
+					photoCursor={photoCursor}
+					cursorHandler={{ cursor, setCursor }}
+				/>
+				<Footer>
+					<ControlPanel
 						cursor={cursor}
-						packsHandler={{ packs, setPacks }}
+						products={maybeProducts}
+						setPhotoCursor={setPhotoCursor}
+						infoModalHandler={{ infoModal, setInfoModal }}
+						seekModalHandler={{ seekModal, setSeekModal }}
+						reversedPackHandler={{ reversedPack, setReversedPack }}
 					/>
-					<PackInfo cursor={cursor} packs={packs} />
-				</PackDisplay>
-			</Footer>
-		</Screen>
+					<PackDisplay $reversed={reversedPack}>
+						<PriceControlPanel
+							cursor={cursor}
+							packsHandler={{ packs, setPacks }}
+						/>
+						<PackInfo cursor={cursor} packs={packs} />
+					</PackDisplay>
+				</Footer>
+			</Screen>
+			</>
 	);
 }
 

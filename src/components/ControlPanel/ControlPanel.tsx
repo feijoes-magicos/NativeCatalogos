@@ -27,26 +27,12 @@ const ControlPanel = (props: Props) => {
 	return (
 		<ControlPanelContainer>
 			<FirstRowFunctions>
-				<TouchableOpacity
-					onPress={(e) => {
-						e.preventDefault();
-						setInfoModal(!infoModal);
-					}}
-				>
-					<Icon>
-						<IconInnerImg source={info} />
-					</Icon>
-				</TouchableOpacity>
-				<TouchableOpacity
-					onPress={(e) => {
-						e.preventDefault();
-						setSeekModal(!seekModal);
-					}}
-				>
-					<Icon>
+				<Icon onPress={()=>{setInfoModal(!infoModal)}}>
+					<IconInnerImg source={info} />
+				</Icon>
+					<Icon onPress={()=>{setSeekModal(!seekModal)}}>
 						<IconInnerImg source={seek} />
 					</Icon>
-				</TouchableOpacity>
 
 				<PicDisplay>
 					<ImageSelector
@@ -58,8 +44,10 @@ const ControlPanel = (props: Props) => {
 					<IconInnerImg source={shopCart} />
 				</Icon>
 			</FirstRowFunctions>
-			<Text style={{ color: "#888888", fontSize: 10 }}>PREÇOS ILUSTRATIVOS</Text>
-			<View style={{ width: "90%", backgroundColor: "#CCD0CF", height:1 }} />
+			<Text style={{ color: "#888888", fontSize: 10 }}>
+				PREÇOS ILUSTRATIVOS
+			</Text>
+			<View style={{ width: "90%", backgroundColor: "#CCD0CF", height: 1 }} />
 			<SecondRowFunctions>
 				<Sweep
 					onPress={() => {

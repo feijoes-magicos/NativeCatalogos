@@ -1,17 +1,17 @@
-import { Dimensions } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { styled } from 'styled-components/native';
+import { Dimensions } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { styled } from "styled-components/native";
 
-const { height, width } = Dimensions.get('screen');
+const { height, width } = Dimensions.get("screen");
 
 export const Screen = styled(SafeAreaView)`
   margin: 0;
   padding: 0;
   width: ${width};
-  height: ${height};
   margin: auto;
 
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -38,6 +38,6 @@ export const Footer = styled.View`
 export const PackDisplay = styled.View<{ $reversed?: boolean }>`
   height: 50%;
   display: flex;
-  flex-direction: ${props => (props.$reversed ? 'column-reverse' : 'column')};
+  flex-direction: ${(props) => (props.$reversed ? "column-reverse" : "column")};
   position: relative;
 `;
