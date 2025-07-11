@@ -2,7 +2,7 @@ import { PacksHandler, Props } from "./types";
 
 import minus from "@assets/minus.png";
 import plus from "@assets/plus.png";
-import { Icon, PackPriceContainer, Tab } from "./PriceControlPanel.styles";
+import { Icon, PackPriceContainer, Tab, TabTitle } from "./PriceControlPanel.styles";
 import { Image, Text, View } from "react-native";
 
 const handlePurchaseDraft = (
@@ -40,7 +40,7 @@ const PriceControlPanel = (props: Props) => {
   return (
     <PackPriceContainer>
       <Tab>
-        <Text style={{ fontWeight: "bold", fontSize: 12 }}>Atual</Text>
+        <TabTitle>Atual</TabTitle>
         <Text>
           R$:
           {packsHandler.packs
@@ -70,7 +70,7 @@ const PriceControlPanel = (props: Props) => {
         </View>
       </Icon>
       <Tab>
-        <Text style={{ fontWeight: "bold", fontSize: 12 }}>Acumulado</Text>
+        <TabTitle>Acumulado</TabTitle>
         <Text>
           R$:
           {packsHandler.packs

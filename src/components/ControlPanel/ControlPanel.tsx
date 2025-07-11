@@ -5,8 +5,10 @@ import {
 	Icon,
 	IconInnerImg,
 	Label,
+	Line,
 	PicDisplay,
 	SecondRowFunctions,
+	SoftWarning,
 	Span,
 	Sweep,
 } from "./ControlPanel.styles";
@@ -53,10 +55,10 @@ const ControlPanel = (props: Props) => {
 					<IconInnerImg source={shopCart} />
 				</Icon>
 			</FirstRowFunctions>
-			<Text style={{ color: "#888888", fontSize: 10 }}>
+			<SoftWarning >
 				PREÇOS ILUSTRATIVOS
-			</Text>
-			<View style={{ width: "90%", backgroundColor: "#CCD0CF", height: 1 }} />
+			</SoftWarning>
+			<Line />
 			<SecondRowFunctions>
 				<Sweep
 					onPress={() => {
@@ -74,7 +76,7 @@ const ControlPanel = (props: Props) => {
 					}}
 				>
 					Ref:
-					<Text style={{ color: "black" }}>{products[cursor].reference}</Text>
+					<Span>{products[cursor].reference}</Span>
 				</Label>
 				<Label>
 					R$:

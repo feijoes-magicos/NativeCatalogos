@@ -1,6 +1,11 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { SeekerHandler } from "../types";
-import { SeekModalBody } from "../SeekModal.styles";
+import {
+	ErrorMessage,
+	SearchInput,
+	SearchSubmit,
+	SeekModalBody,
+} from "../SeekModal.styles";
 import { Button, Text, TextInput, TouchableOpacity } from "react-native";
 
 type Props = {
@@ -19,7 +24,7 @@ const seekHandler = (params: SeekerHandler) => {
 		setRefEncontrada,
 		setTentativaBusca,
 		openStatusHandler,
-		ref
+		ref,
 	} = params;
 	enderecos.forEach((endereco) => {
 		if (
@@ -44,31 +49,17 @@ const SeekForm = (props: Props) => {
 
 	return (
 		<SeekModalBody>
-			<TextInput
-				placeholder="00.00.000"
-				onChangeText={setRef}
-				value={ref}
-				style={{
-					backgroundColor: "#BBB",
-					width: "80%",
-					height: 40,
-				}}
-			/>
+			<SearchInput placeholder="00.00.000" onChangeText={setRef} value={ref} />
 			{!refEncontrada && tentativaBusca && (
-				<Text style={{ fontSize: 10, color: "red" }}>referência não encontrada</Text>
+				<ErrorMessage>referência não encontrada</ErrorMessage>
 			)}
-			<TouchableOpacity
-				style={{
-					borderRadius: 5,
-					height: 30,
-					backgroundColor: "#809caa",
-				}}
+			<SearchSubmit
 				onPress={() => {
 					seekHandler({
 						refEncontrada,
 						enderecos,
 						openStatusHandler,
-						ref,	
+						ref,
 						cursorState,
 						setRefEncontrada,
 						setTentativaBusca,
@@ -76,7 +67,7 @@ const SeekForm = (props: Props) => {
 				}}
 			>
 				<Text>Buscar</Text>
-			</TouchableOpacity>
+			</SearchSubmit>
 		</SeekModalBody>
 	);
 };

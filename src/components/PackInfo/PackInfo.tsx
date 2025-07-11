@@ -1,7 +1,7 @@
 import { Props } from "./types";
 import equal from "@assets/equal.png";
 import DisplayAmount from "./subcomponents/DisplayAmount";
-import { BottomContainer, PackBuilder } from "./PackInfo.styles";
+import { BottomContainer, DisplayAmountContainer, PackBuilder } from "./PackInfo.styles";
 import { Image, View } from "react-native";
 
 const PackInfo = (props: Props) => {
@@ -10,7 +10,7 @@ const PackInfo = (props: Props) => {
     <BottomContainer>
       <PackBuilder>
         {packs[cursor].packs.map((pack, indice) => (
-          <View key={indice} style={{ display: "flex", flexDirection:"row",  gap: 20 }}>
+          <DisplayAmountContainer key={indice} >
             <DisplayAmount
               modelSize={pack.size.toUpperCase()}
               value={pack.minQuantity}
@@ -28,7 +28,7 @@ const PackInfo = (props: Props) => {
                 />
               </>
             )}
-          </View>
+          </DisplayAmountContainer>
         ))}
       </PackBuilder>
     </BottomContainer>

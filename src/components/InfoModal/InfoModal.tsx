@@ -2,7 +2,10 @@ import { Props } from "./types";
 import whiteCross from "@assets/cruz_branca.png";
 import {
 	BodyInfoModal,
+	BodyTitle,
 	Header,
+	HeaderTitle,
+	ModalExit,
 	Window,
 	WindowWrapper,
 } from "./InfoModal.styles";
@@ -25,15 +28,14 @@ const InfoModal = (props: Props) => {
 				style={{boxShadow:"0px 0px 5px #00000077"}}
 				>
 					<Header>
-						<Text style={{ color: "white" }}>Informações</Text>
-						<TouchableOpacity
+						<HeaderTitle>Informações</HeaderTitle>
+						<ModalExit
 							onPress={() => {setInfoModal(!infoModal)}}
-							style={{ position: "absolute", right: "2%", top: "4%" }}
 						>
 							<Image source={whiteCross} />
-						</TouchableOpacity>
+						</ModalExit>
 					</Header>
-					<Text style={{ fontSize: 14, alignSelf: "center" }}>Cores</Text>
+					<BodyTitle>Cores</BodyTitle>
 					<BodyInfoModal>
 						<Text>Nome do Produto: {props.info.name ? props.info.name : "..."}</Text>
 						<Text>Referencia: {props.info.reference ? props.info.reference : "..."}</Text>

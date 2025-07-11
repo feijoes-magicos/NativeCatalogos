@@ -47,3 +47,18 @@ export const Button = styled.TouchableOpacity`
   right: 2%;
   top: 4%;
 `;
+export const SearchInput = styled.TextInput`
+  background-color: #bbb;
+  width: 80%;
+  height: 40px;
+`;
+export const SearchSubmit = styled.TouchableOpacity`
+  border-radius: 5px;
+  height: 30px;
+  background-color: #809caa;
+`;
+
+export const ErrorMessage = styled.Text`
+  font-size: 12px;
+  color: red;
+`;

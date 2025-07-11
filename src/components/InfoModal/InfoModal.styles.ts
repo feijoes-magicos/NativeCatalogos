@@ -21,6 +21,9 @@ export const Header = styled.View`
   align-items: center;
   justify-content: center;
 `;
+export const HeaderTitle = styled.Text`
+  color: white;
+`;
 
 export const Window = styled.View`
   position: absolute;
@@ -34,6 +37,16 @@ export const Window = styled.View`
   justify-content: start;
 `;
 
+export const ModalExit = styled.TouchableOpacity`
+  position: absolute;
+  right: 2%;
+  top: 4%;
+`;
+
 export const BodyInfoModal = styled.View`
   text-indent: 15px;
+`;
+export const BodyTitle = styled.Text`
+  font-size: 14px;
+  align-self: center;
 `;

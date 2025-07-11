@@ -34,12 +34,21 @@ export const AmountDisplay = styled.View`
   border-radius: 4px;
   position: relative;
 `;
+export const DisplayAmountContainer = styled.View`
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+`;
 export const PackDisplay = styled.View`
   position: relative;
   display: flex;
   left: 50%;
   align-items: center;
   justify-content: center;
+`;
+
+export const PackDisplayImage = styled.Image`
+  position: absolute;
 `;
 
 export const PackDisplayText = styled.Text`

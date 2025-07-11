@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const PackPriceContainer = styled.View`
   background-color: white;
   display: flex;
-	flex-direction: row;
+  flex-direction: row;
   justify-content: center;
 
   height: 50%;
@@ -15,6 +15,10 @@ export const Tab = styled.View`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+export const TabTitle = styled.Text`
+  font-weight: bold;
+  font-size: 12;
 `;
 export const Icon = styled.TouchableOpacity`
   align-self: center;

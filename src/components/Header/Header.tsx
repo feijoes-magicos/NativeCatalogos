@@ -5,6 +5,8 @@ import {
   HeaderContainer,
   CategoryBox,
   FunctionButton,
+  ButtonInnerImage,
+  CategoryBoxText,
 } from './Header.styles';
 
 import whiteArrow from '@assets/whiteArrow.png';
@@ -48,9 +50,8 @@ const Header = (props: Props) => {
     <HeaderDisplay>
       <HeaderContainer>
         <Button>
-          <Image
+          <ButtonInnerImage
             source={backwardButton}
-            style={{ aspectRatio: 1, height: '50%' }}
           />
         </Button>
         <Button
@@ -63,15 +64,14 @@ const Header = (props: Props) => {
             });
           }}
         >
-          <Image
+          <ButtonInnerImage
             source={whiteArrow}
-            style={{ aspectRatio: 1, height: '50%' }}
           />
         </Button>
         <CategoryBox>
-          <Text style={{ color: '#809caa', fontWeight: 'bold' }}>
+          <CategoryBoxText>
             {products ? currentCategory : '...'}
-          </Text>
+          </CategoryBoxText>
         </CategoryBox>
         <Button
           onTouchEnd={() => {
@@ -82,9 +82,8 @@ const Header = (props: Props) => {
             });
           }}
         >
-          <Image
+          <ButtonInnerImage
             source={whiteArrow}
-            style={{ aspectRatio: 1, height: '50%' }}
           />
         </Button>
         <FunctionButton>

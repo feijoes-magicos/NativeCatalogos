@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useState } from "react";
 
 import imageUndefined from "@assets/image-undefined.png";
-import { MiniPic } from "../ControlPanel.styles";
+import { MiniPic, MiniPicInnerImage } from "../ControlPanel.styles";
 import { Image } from "react-native";
 
 type Props = {
@@ -25,9 +25,8 @@ const ImageSelector = (props: Props) => {
             }}
             key={image.id}
           >
-            <Image
+            <MiniPicInnerImage
               source={error ? imageUndefined : { uri: image.path }}
-              style={{ height: "99%", aspectRatio: 1 }}
               onError={setSmartImage}
             />
           </MiniPic>

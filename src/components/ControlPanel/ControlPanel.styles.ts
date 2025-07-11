@@ -75,3 +75,16 @@ export const Label = styled(Text)`
 export const Span = styled.Text`
   color: black;
 `;
+export const SoftWarning = styled.Text`
+  color: #888888;
+  fontsize: 10px;
+`;
+export const Line = styled.View`
+  width: 90%;
+  background-color: #ccd0cf;
+  height: 1px;
+`;
+export const MiniPicInnerImage = styled.Image`
+  height: 99%;
+  aspect-ratio: 1;
+`;

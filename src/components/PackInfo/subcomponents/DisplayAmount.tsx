@@ -2,6 +2,7 @@ import circle from "@assets/circle.png";
 import {
   AmountDisplay,
   PackDisplay,
+  PackDisplayImage,
   PackDisplayText,
 } from "../PackInfo.styles";
 import { Image, Text } from "react-native";
@@ -16,7 +17,7 @@ const DisplayAmount = (props: Props) => {
     <AmountDisplay>
       {props.modelSize && (
         <PackDisplay>
-          <Image source={circle} style={{ position: "absolute" }} />
+          <PackDisplayImage source={circle} />
           <PackDisplayText>{props.modelSize}</PackDisplayText>
         </PackDisplay>
       )}
