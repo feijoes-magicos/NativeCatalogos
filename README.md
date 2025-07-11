@@ -25,4 +25,7 @@ EXECUÇÃO
 após configurar corretamente as dependências, rode o comando:
 
     npx expo start
-Para testar instale o aplicativo expo-go e escaneio o qrCode
+Para testar instale o aplicativo expo-go e escaneie o qrCode
+
+**Observação**
+para copiar a referência pro teste de busca, basta pressionar e segurar a referência entre o valor e a subcategoria 
